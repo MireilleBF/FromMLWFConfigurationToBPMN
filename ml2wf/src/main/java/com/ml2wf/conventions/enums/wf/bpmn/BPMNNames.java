@@ -1,10 +1,12 @@
-package com.ml2wf.conventions.enums.bpmn;
+package com.ml2wf.conventions.enums.wf.bpmn;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.ml2wf.conventions.enums.TaskTagsSelector;
+import com.ml2wf.tasks.base.WFTask;
+import com.ml2wf.tasks.concretes.BPMNTask;
 
 /**
  * This {@code enum} contains handled tags' names according to the
@@ -33,6 +35,8 @@ public enum BPMNNames implements TaskTagsSelector {
 	 */
 	private String name;
 
+	private static final Class<? extends WFTask> TASK_CLASS = BPMNTask.class;
+
 	/**
 	 * {@code BPMNNodesNames}'s constructor.
 	 *
@@ -51,20 +55,12 @@ public enum BPMNNames implements TaskTagsSelector {
 		return this.name;
 	}
 
-	/**
-	 * Returns whether the given tag is a BPMN task tag's name or not.
-	 *
-	 * @param tag tag to check
-	 * @return whether the given tag is a BPMN task tag's name or not
-	 *
-	 * @since 1.0
-	 */
-	public boolean isBPMNTask(String tag) {
-		return this.getTaskTags().contains(tag);
-	}
-
 	@Override
 	public List<String> getTaskTags() {
 		return new ArrayList<>(Arrays.asList(USERTASK.getName(), TASK.getName(), SERVICETASK.getName()));
+	}
+
+	public static Class<? extends WFTask> getTaskClass() {
+		return TASK_CLASS;
 	}
 }

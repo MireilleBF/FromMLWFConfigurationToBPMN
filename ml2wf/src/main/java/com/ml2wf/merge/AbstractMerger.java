@@ -22,14 +22,14 @@ import com.ml2wf.constraints.InvalidConstraintException;
 import com.ml2wf.constraints.factory.ConstraintFactory;
 import com.ml2wf.constraints.factory.ConstraintFactoryImpl;
 import com.ml2wf.conventions.Notation;
-import com.ml2wf.conventions.enums.bpmn.BPMNAttributes;
-import com.ml2wf.conventions.enums.bpmn.BPMNNames;
 import com.ml2wf.conventions.enums.fm.FMAttributes;
 import com.ml2wf.conventions.enums.fm.FMNames;
-import com.ml2wf.tasks.FMTask;
-import com.ml2wf.tasks.Task;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNAttributes;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNNames;
+import com.ml2wf.tasks.base.Task;
+import com.ml2wf.tasks.concretes.FMTask;
+import com.ml2wf.tasks.factory.FMTaskFactory;
 import com.ml2wf.tasks.factory.TaskFactory;
-import com.ml2wf.tasks.factory.TaskFactoryImpl;
 import com.ml2wf.tasks.manager.TasksManager;
 import com.ml2wf.util.Pair;
 import com.ml2wf.util.XMLManager;
@@ -96,7 +96,7 @@ public abstract class AbstractMerger extends XMLManager {
 	public AbstractMerger(File file) throws ParserConfigurationException, SAXException, IOException {
 		super(file);
 		this.constraintFactory = new ConstraintFactoryImpl(getDocument());
-		this.taskFactory = new TaskFactoryImpl();
+		this.taskFactory = new FMTaskFactory();
 	}
 
 	/**

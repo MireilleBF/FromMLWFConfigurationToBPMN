@@ -21,14 +21,14 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import com.ml2wf.constraints.InvalidConstraintException;
-import com.ml2wf.conventions.enums.bpmn.BPMNNames;
 import com.ml2wf.conventions.enums.fm.FMAttributes;
 import com.ml2wf.conventions.enums.fm.FMNames;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNNames;
 import com.ml2wf.merge.AbstractMerger;
 import com.ml2wf.merge.concretes.WFMetaMerger;
-import com.ml2wf.tasks.BPMNTask;
-import com.ml2wf.tasks.FMTask;
-import com.ml2wf.tasks.Task;
+import com.ml2wf.tasks.base.Task;
+import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.tasks.factory.TaskFactory;
 import com.ml2wf.tasks.manager.TasksManager;
 import com.ml2wf.util.Pair;

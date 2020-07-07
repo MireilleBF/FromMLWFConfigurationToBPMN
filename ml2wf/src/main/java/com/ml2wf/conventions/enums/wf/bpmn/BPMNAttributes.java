@@ -1,4 +1,4 @@
-package com.ml2wf.conventions.enums.bpmn;
+package com.ml2wf.conventions.enums.wf.bpmn;
 
 /**
  * This {@code enum} contains handled attributes' names according to the

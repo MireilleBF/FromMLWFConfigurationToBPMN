@@ -4,8 +4,8 @@ import java.io.File;
 
 import org.w3c.dom.Document;
 
-import com.ml2wf.tasks.BPMNTask;
-import com.ml2wf.tasks.FMTask;
+import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.Pair;
 
 /**

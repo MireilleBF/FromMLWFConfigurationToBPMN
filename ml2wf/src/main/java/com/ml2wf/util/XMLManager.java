@@ -37,9 +37,9 @@ import org.xml.sax.SAXException;
 
 import com.ml2wf.conventions.Notation;
 import com.ml2wf.conventions.enums.TaskTagsSelector;
-import com.ml2wf.conventions.enums.bpmn.BPMNAttributes;
-import com.ml2wf.conventions.enums.bpmn.BPMNNames;
 import com.ml2wf.conventions.enums.fm.FMAttributes;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNAttributes;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNNames;
 import com.ml2wf.tasks.manager.TasksManager;
 
 /**

@@ -9,8 +9,8 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import com.ml2wf.merge.base.BaseMergerImpl;
-import com.ml2wf.tasks.BPMNTask;
-import com.ml2wf.tasks.FMTask;
+import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.Pair;
 
 /**

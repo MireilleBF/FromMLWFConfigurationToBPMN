@@ -31,4 +31,17 @@ public interface TaskTagsSelector {
 	 * @since 1.0
 	 */
 	public List<String> getTaskTags();
+
+	/**
+	 * Returns whether the given tag is a valid task tag's name or not according to
+	 * the implementation context.
+	 *
+	 * @param tag tag to check
+	 * @return whether the given tag is a FeatureModel task tag's name or not
+	 *
+	 * @since 1.0
+	 */
+	public default boolean isValidTaskTag(String tag) {
+		return this.getTaskTags().contains(tag);
+	}
 }

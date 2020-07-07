@@ -10,9 +10,9 @@ import java.util.stream.Stream;
 
 import org.w3c.dom.Node;
 
-import com.ml2wf.tasks.BPMNTask;
-import com.ml2wf.tasks.FMTask;
-import com.ml2wf.tasks.Task;
+import com.ml2wf.tasks.base.Task;
+import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.XMLManager;
 
 /**

@@ -1,12 +1,15 @@
-package com.ml2wf.tasks;
+package com.ml2wf.tasks.concretes;
+
+import com.ml2wf.tasks.base.Task;
+import com.ml2wf.tasks.base.WFTask;
 
 /**
- * This class represents {@code Task} using the
+ * This class represents a {@code Task} using the
  * <a href="http://www.bpmn.org/">BPMN standard</a>.
  *
  * <p>
  *
- * It is an extension of the {@code Task} class.
+ * It is an extension of the {@code WFTask} class.
  *
  * @author Nicolas Lacroix
  *
@@ -15,7 +18,7 @@ package com.ml2wf.tasks;
  * @see Task
  *
  */
-public class BPMNTask extends Task {
+public class BPMNTask extends WFTask {
 
 	/**
 	 * The name of the referred meta-task.
@@ -36,22 +39,6 @@ public class BPMNTask extends Task {
 	 */
 	public BPMNTask(String name, Task parent, String reference) {
 		super(name, parent);
-		this.reference = reference;
-	}
-
-	/**
-	 * {@code BPMNTask}'s partial constructor.
-	 *
-	 * <p>
-	 *
-	 * It initializes a {@code BPMNTask} specifying its {@code name} and
-	 * {@code reference}.
-	 *
-	 * @param name      name of the task
-	 * @param reference reference of the task
-	 */
-	public BPMNTask(String name, String reference) {
-		super(name);
 		this.reference = reference;
 	}
 

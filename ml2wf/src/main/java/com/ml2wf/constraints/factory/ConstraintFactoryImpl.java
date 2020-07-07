@@ -23,8 +23,8 @@ import com.ml2wf.constraints.parser.Parser;
 import com.ml2wf.constraints.tree.BinaryTree;
 import com.ml2wf.conventions.Notation;
 import com.ml2wf.conventions.enums.fm.FMNames;
-import com.ml2wf.tasks.FMTask;
-import com.ml2wf.tasks.Task;
+import com.ml2wf.tasks.base.Task;
+import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.tasks.manager.TasksManager;
 import com.ml2wf.util.Pair;
 

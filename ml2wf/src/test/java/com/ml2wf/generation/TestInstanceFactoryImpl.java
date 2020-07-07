@@ -29,8 +29,8 @@ import org.xml.sax.SAXException;
 import com.ml2wf.AbstractXMLTest;
 import com.ml2wf.constraints.InvalidConstraintException;
 import com.ml2wf.conventions.Notation;
-import com.ml2wf.conventions.enums.bpmn.BPMNAttributes;
-import com.ml2wf.conventions.enums.bpmn.BPMNNames;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNAttributes;
+import com.ml2wf.conventions.enums.wf.bpmn.BPMNNames;
 import com.ml2wf.merge.base.BaseMergerImpl;
 import com.ml2wf.util.XMLManager;
 

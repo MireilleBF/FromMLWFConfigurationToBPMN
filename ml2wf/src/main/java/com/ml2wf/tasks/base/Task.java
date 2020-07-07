@@ -1,4 +1,4 @@
-package com.ml2wf.tasks;
+package com.ml2wf.tasks.base;
 
 import org.w3c.dom.Node;
 

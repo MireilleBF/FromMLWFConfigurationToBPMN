@@ -1,4 +1,4 @@
-package com.ml2wf.tasks;
+package com.ml2wf.tasks.concretes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.w3c.dom.Node;
 
+import com.ml2wf.tasks.base.Task;
 import com.ml2wf.tasks.manager.TasksManager;
 
 /**

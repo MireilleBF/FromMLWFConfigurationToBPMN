@@ -4,7 +4,7 @@ import java.util.Set;
 
 import org.w3c.dom.Node;
 
-import com.ml2wf.tasks.Task;
+import com.ml2wf.tasks.base.Task;
 
 /**
  * This interface provides a method for the <b>creation of {@code Task}'s
