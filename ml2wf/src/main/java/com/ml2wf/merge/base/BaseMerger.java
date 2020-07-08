@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.w3c.dom.Document;
 
-import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.base.WFTask;
 import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.Pair;
 
@@ -58,16 +58,16 @@ public interface BaseMerger {
 	public void mergeWithWF(boolean backUp, boolean completeMerge, File... wfFiles) throws Exception;
 
 	/**
-	 * Returns a suitable parent {@code FMTask} for the given {@code Task}.
+	 * Returns a suitable parent {@code FMTask} for the given {@code WFTask}.
 	 *
-	 * @return a suitable parent {@code FMTask} for the given {@code Task}
+	 * @return a suitable parent {@code FMTask} for the given {@code WFTask}
 	 *
 	 * @since 1.0
 	 *
 	 * @see FMTask
-	 * @see BPMNTask
+	 * @see WFTask
 	 */
-	public abstract FMTask getSuitableParent(BPMNTask child);
+	public abstract FMTask getSuitableParent(WFTask child);
 
 	/**
 	 * Returns the root parent {@code FMTask} according to the workflow's type (meta

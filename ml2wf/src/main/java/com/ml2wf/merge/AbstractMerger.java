@@ -30,6 +30,7 @@ import com.ml2wf.tasks.base.Task;
 import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.tasks.factory.FMTaskFactory;
 import com.ml2wf.tasks.factory.TaskFactory;
+import com.ml2wf.tasks.factory.WFTaskFactory;
 import com.ml2wf.tasks.manager.TasksManager;
 import com.ml2wf.util.Pair;
 import com.ml2wf.util.XMLManager;
@@ -66,11 +67,17 @@ import com.ml2wf.util.XMLManager;
 public abstract class AbstractMerger extends XMLManager {
 
 	/**
-	 * {@code TaskFactory}'s instance that will generate {@code Task} instances.
+	 * {@code FMTaskFactory}'s instance that will generate {@code Task} instances.
 	 *
-	 * @see TaskFactory
+	 * @see FMTaskFactory
 	 */
-	private TaskFactory taskFactory;
+	private TaskFactory fmTaskFactory;
+	/**
+	 * {@code WFTaskFactory}'s instance that will generate {@code Task} instances.
+	 *
+	 * @see WFTaskFactory
+	 */
+	private TaskFactory wfTaskFactory;
 	/**
 	 * {@code ConstraintFactory}'s instance that will generate constraint nodes.
 	 *
@@ -96,18 +103,30 @@ public abstract class AbstractMerger extends XMLManager {
 	public AbstractMerger(File file) throws ParserConfigurationException, SAXException, IOException {
 		super(file);
 		this.constraintFactory = new ConstraintFactoryImpl(getDocument());
-		this.taskFactory = new FMTaskFactory();
+		this.fmTaskFactory = new FMTaskFactory();
+		this.wfTaskFactory = new WFTaskFactory();
 	}
 
 	/**
-	 * Returns the {@code TaskFactory}'s instance.
+	 * Returns the {@code FMTaskFactory}'s instance.
 	 *
-	 * @return the {@code TaskFactory}'s instance
+	 * @return the {@code FMTaskFactory}'s instance
 	 *
-	 * @see TaskFactory
+	 * @see FMTaskFactory
 	 */
-	public TaskFactory getTaskFactory() {
-		return this.taskFactory;
+	public FMTaskFactory getFMTaskFactory() {
+		return (FMTaskFactory) this.fmTaskFactory;
+	}
+
+	/**
+	 * Returns the {@code WFTaskFactory}'s instance.
+	 *
+	 * @return the {@code WFTaskFactory}'s instance
+	 *
+	 * @see WFTaskFactory
+	 */
+	public WFTaskFactory getWFTaskFactory() {
+		return (WFTaskFactory) this.wfTaskFactory;
 	}
 
 	/**
@@ -182,7 +201,7 @@ public abstract class AbstractMerger extends XMLManager {
 	protected FMTask createFeatureWithName(String name) {
 		Element feature = getDocument().createElement(FMNames.FEATURE.getName());
 		feature.setAttribute(FMAttributes.NAME.getName(), name);
-		return (FMTask) this.taskFactory.createTasks(feature).stream().findFirst().orElse(null);
+		return (FMTask) this.fmTaskFactory.createTasks(feature).stream().findFirst().orElse(null);
 	}
 
 	/**

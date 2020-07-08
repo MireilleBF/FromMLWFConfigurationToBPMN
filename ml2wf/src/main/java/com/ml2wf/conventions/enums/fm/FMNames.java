@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.ml2wf.conventions.enums.TaskTagsSelector;
-import com.ml2wf.tasks.concretes.FMTask;
 
 /**
  * This {@code enum} contains handled tags' names according to the
@@ -35,7 +34,6 @@ public enum FMNames implements TaskTagsSelector {
 	 * Tag name.
 	 */
 	private String name;
-	private static final Class<? extends FMTask> TASK_CLASS = FMTask.class;
 
 	/**
 	 * {@code FeatureModelNames}'s constructor.
@@ -58,10 +56,6 @@ public enum FMNames implements TaskTagsSelector {
 	@Override
 	public List<String> getTaskTags() {
 		return new ArrayList<>(Arrays.asList(FEATURE.getName(), AND.getName(), ALT.getName()));
-	}
-
-	public static Class<? extends FMTask> getTaskClass() {
-		return TASK_CLASS;
 	}
 
 }

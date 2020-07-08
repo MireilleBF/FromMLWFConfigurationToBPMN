@@ -9,7 +9,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import com.ml2wf.merge.base.BaseMergerImpl;
-import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.base.WFTask;
 import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.Pair;
 
@@ -51,7 +51,7 @@ public class WFMetaMerger extends BaseMergerImpl {
 	}
 
 	@Override
-	public FMTask getSuitableParent(BPMNTask task) {
+	public FMTask getSuitableParent(WFTask task) {
 		return this.getReferredFMTask(task, this.getGlobalFMTask(STEP_TASK));
 	}
 

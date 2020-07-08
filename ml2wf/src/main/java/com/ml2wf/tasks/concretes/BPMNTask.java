@@ -15,15 +15,10 @@ import com.ml2wf.tasks.base.WFTask;
  *
  * @version 1.0
  *
- * @see Task
+ * @see WFTask
  *
  */
 public class BPMNTask extends WFTask {
-
-	/**
-	 * The name of the referred meta-task.
-	 */
-	private String reference;
 
 	/**
 	 * {@code BPMNTask}'s full constructor.
@@ -38,34 +33,13 @@ public class BPMNTask extends WFTask {
 	 * @param reference reference of the task
 	 */
 	public BPMNTask(String name, Task parent, String reference) {
-		super(name, parent);
-		this.reference = reference;
-	}
+		super(name, parent, reference);
 
-	/**
-	 * Returns the current {@link #reference}.
-	 *
-	 * @return the current {@code reference}
-	 */
-	public String getReference() {
-		return this.reference;
-	}
-
-	/**
-	 * Sets the current {@link #reference}.
-	 *
-	 * @param reference the new task's reference
-	 */
-	public void setReference(String reference) {
-		this.reference = reference;
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = (prime * result) + ((this.reference == null) ? 0 : this.reference.hashCode());
-		return result;
+		return super.hashCode();
 	}
 
 	@Override
@@ -75,6 +49,6 @@ public class BPMNTask extends WFTask {
 
 	@Override
 	public String toString() {
-		return super.toString() + "[\n\tBPMNTask [reference=" + this.reference + "]]";
+		return super.toString() + "[\n\tBPMNTask]";
 	}
 }

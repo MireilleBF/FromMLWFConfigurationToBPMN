@@ -18,7 +18,7 @@ import com.ml2wf.constraints.factory.ConstraintFactoryImpl;
 import com.ml2wf.conventions.Notation;
 import com.ml2wf.conventions.enums.fm.FMNames;
 import com.ml2wf.merge.base.BaseMergerImpl;
-import com.ml2wf.tasks.concretes.BPMNTask;
+import com.ml2wf.tasks.base.WFTask;
 import com.ml2wf.tasks.concretes.FMTask;
 import com.ml2wf.util.Pair;
 import com.ml2wf.util.XMLManager;
@@ -64,7 +64,7 @@ public class WFInstanceMerger extends BaseMergerImpl {
 	}
 
 	@Override
-	public FMTask getSuitableParent(BPMNTask task) {
+	public FMTask getSuitableParent(WFTask task) {
 		return this.getReferredFMTask(task, unmanagedTask);
 	}
 

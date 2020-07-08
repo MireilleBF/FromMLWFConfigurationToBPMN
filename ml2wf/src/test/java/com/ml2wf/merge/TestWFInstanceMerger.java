@@ -147,6 +147,7 @@ public class TestWFInstanceMerger extends AbstractXMLTest {
 	@DisplayName("Test of merging feature")
 	public void testMergingStructure(Path path)
 			throws Exception {
+		System.out.println("-");
 		((WFInstanceMerger) this.testedClass).mergeWithWF(false, true, new File(path.toUri()));
 		this.sourceDocument = XMLManager.preprocess(path.toFile());
 		this.resultDocument = XMLManager.getDocument();
